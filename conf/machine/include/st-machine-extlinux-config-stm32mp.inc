@@ -101,3 +101,8 @@ UBOOT_EXTLINUX_FDT_stm32mp157c-dk2-m4-examples = "/stm32mp157c-dk2-m4-examples.d
 UBOOT_EXTLINUX_FDT_stm32mp157c-ev1-m4-examples = "/stm32mp157c-ev1-m4-examples.dtb"
 UBOOT_EXTLINUX_FDT_stm32mp157f-dk2-m4-examples = "/stm32mp157f-dk2-m4-examples.dtb"
 UBOOT_EXTLINUX_FDT_stm32mp157f-ev1-m4-examples = "/stm32mp157f-ev1-m4-examples.dtb"
+
+UBOOT_EXTLINUX_TARGETS_EXTRA_CONFIG[stm32mp151a-kiwi] += "stm32mp151a-kiwi-a7-examples"
+UBOOT_EXTLINUX_TARGETS_EXTRA_CONFIG[stm32mp151a-kiwi] += "stm32mp151a-kiwi-m4-examples"
+UBOOT_EXTLINUX_FDT_stm32mp151a-kiwi-a7-examples = "/stm32mp151a-kiwi-a7-examples.dtb"
+UBOOT_EXTLINUX_FDT_stm32mp151a-kiwi-m4-examples = "/stm32mp151a-kiwi-m4-examples.dtb"

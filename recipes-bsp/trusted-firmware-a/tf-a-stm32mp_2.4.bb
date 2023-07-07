@@ -26,6 +26,7 @@ TF_A_RELEASE = "r2.2"
 PV = "${TF_A_VERSION}-${TF_A_SUBVERSION}-${TF_A_RELEASE}"
 
 ARCHIVER_ST_BRANCH = "${TF_A_VERSION}-${TF_A_SUBVERSION}"
+ARCHIVER_KIWI_BRANCH = "onekiwi-${ARCHIVER_ST_BRANCH}-r2.2"
 ARCHIVER_ST_REVISION = "${PV}"
 ARCHIVER_COMMUNITY_BRANCH = "master"
 ARCHIVER_COMMUNITY_REVISION = "${TF_A_VERSION}"
@@ -50,12 +51,14 @@ include ${@oe.utils.ifelse(d.getVar('ST_ARCHIVER_ENABLE') == '1', 'tf-a-stm32mp-
 # ---------------------------------
 BBCLASSEXTEND = "devupstream:target"
 
-SRC_URI_class-devupstream = "git://github.com/STMicroelectronics/arm-trusted-firmware.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
-SRCREV_class-devupstream = "a47302b7b05a9c1e27f62b08fe8f66ca422ef174"
+SRC_URI_class-devupstream = "git://github.com/OneKiwiTool/atf-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
+#SRCREV_class-devupstream = "a47302b7b05a9c1e27f62b08fe8f66ca422ef174"
+SRCREV_class-devupstream = "6f2ec3c5ab3504ace2a0999ed68efa097072cca2"
 
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github
 # ---------------------------------
 STM32MP_SOURCE_SELECTION ?= "tarball"
 
-DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'github', '-1', '1', d)}"
+#DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'github', '-1', '1', d)}"
+DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'tarball', '-1', '1', d)}"
