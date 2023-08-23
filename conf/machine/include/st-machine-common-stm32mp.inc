@@ -227,8 +227,8 @@ ENABLE_IMAGE_LICENSE_SUMMARY ?= "1"
 #   rootfs < Multivolume UBI - (uboot_config + uboot_config_r + bootfs + vendorfs + userfs + UBI Overhead + 4 * 9*eraseblocks)
 #   rootfs < 1014MiB - (256KiB + 256KiB + 64MiB + 16MiB + 128MiB + 53280KiB + 4 * 9 * 256KiB)
 #   rootfs < 744.5MiB
-# Proposed value for rootfs is 744MiB
-STM32MP_ROOTFS_MAXSIZE_NAND ?= "762336"
+# Proposed value for rootfs is 1024MiB
+STM32MP_ROOTFS_MAXSIZE_NAND ?= "1048576"
 # Default ROOTFS max size for image being built to this value
 IMAGE_ROOTFS_MAXSIZE ?= "${STM32MP_ROOTFS_MAXSIZE_NAND}"
 
