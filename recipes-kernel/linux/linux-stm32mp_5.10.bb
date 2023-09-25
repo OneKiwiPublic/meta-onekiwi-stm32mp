@@ -58,9 +58,9 @@ S = "${WORKDIR}/linux-${LINUX_VERSION}.${LINUX_SUBVERSION}"
 # ---------------------------------
 BBCLASSEXTEND = "devupstream:target"
 
-SRC_URI_class-devupstream = "git://github.com/OneKiwiTool/linux-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
+SRC_URI_class-devupstream = "git://github.com/OneKiwiPublic/linux-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
 #SRCREV_class-devupstream = "8e756f0b4a005e9a0374ab2ffb20df8c3ed4ed63"
-SRCREV_class-devupstream = "d94e24c1542e994e726f0c76e227b6bdc53995b7"
+SRCREV_class-devupstream = "56b9cdeaebc7896e8938068bd1c82483979b79d7"
 
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github

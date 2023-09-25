@@ -55,9 +55,9 @@ S = "${WORKDIR}/git"
 # ---------------------------------
 BBCLASSEXTEND = "devupstream:target"
 
-SRC_URI_class-devupstream = "git://github.com/OneKiwiTool/uboot-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
+SRC_URI_class-devupstream = "git://github.com/OneKiwiPublic/uboot-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
 #SRCREV_class-devupstream = "b1233459c34eb14c5070f605655e72e74be5ea5c"
-SRCREV_class-devupstream = "f39c832982afb93069a9d4e29e09db1236d484bf"
+SRCREV_class-devupstream = "57195aa29f001899042ba38ef081f2560c9cb29b"
 
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github
