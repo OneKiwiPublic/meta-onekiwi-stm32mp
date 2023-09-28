@@ -44,6 +44,7 @@ U_BOOT_RELEASE = "r1"
 PV = "${U_BOOT_VERSION}-${U_BOOT_SUBVERSION}-${U_BOOT_RELEASE}"
 
 ARCHIVER_ST_BRANCH = "${U_BOOT_VERSION}-${U_BOOT_SUBVERSION}"
+ARCHIVER_KIWI_BRANCH = "onekiwi-${ARCHIVER_ST_BRANCH}-${U_BOOT_RELEASE}"
 ARCHIVER_ST_REVISION = "${PV}"
 ARCHIVER_COMMUNITY_BRANCH = "master"
 ARCHIVER_COMMUNITY_REVISION = "${U_BOOT_VERSION}"
@@ -55,7 +56,10 @@ S = "${WORKDIR}/git"
 # ---------------------------------
 BBCLASSEXTEND = "devupstream:target"
 
-SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/u-boot.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+#SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/u-boot.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+#SRCREV:class-devupstream = "aa6822adfbe7b0b89d646e987505a740511878e2"
+
+SRC_URI_class-devupstream = "git://github.com/OneKiwiPublic/uboot-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
 SRCREV:class-devupstream = "aa6822adfbe7b0b89d646e987505a740511878e2"
 
 # ---------------------------------
@@ -63,4 +67,5 @@ SRCREV:class-devupstream = "aa6822adfbe7b0b89d646e987505a740511878e2"
 # ---------------------------------
 STM32MP_SOURCE_SELECTION ?= "tarball"
 
-DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'github', '-1', '1', d)}"
+#DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'github', '-1', '1', d)}"
+DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'tarball', '-1', '1', d)}"

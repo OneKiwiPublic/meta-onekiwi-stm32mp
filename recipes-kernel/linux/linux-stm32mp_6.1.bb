@@ -49,6 +49,7 @@ LINUX_RELEASE = "r1"
 PV = "${LINUX_VERSION}${LINUX_SUBVERSION}-${LINUX_TARGET}-${LINUX_RELEASE}"
 
 ARCHIVER_ST_BRANCH = "v${LINUX_VERSION}-${LINUX_TARGET}"
+ARCHIVER_KIWI_BRANCH = "onekiwi-${ARCHIVER_ST_BRANCH}-${LINUX_RELEASE}"
 ARCHIVER_ST_REVISION = "v${LINUX_VERSION}-${LINUX_TARGET}-${LINUX_RELEASE}"
 ARCHIVER_COMMUNITY_BRANCH = "linux-${LINUX_VERSION}.y"
 ARCHIVER_COMMUNITY_REVISION = "v${LINUX_VERSION}${LINUX_SUBVERSION}"
@@ -60,8 +61,12 @@ S = "${WORKDIR}/${LINUX_TARBASE}"
 # ---------------------------------
 BBCLASSEXTEND = "devupstream:target"
 
-SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/linux.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+#SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/linux.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+#SRCREV:class-devupstream = "d33b43a4dcc4ae3cd178793c139756af77e42bde"
+
+SRC_URI_class-devupstream = "git://github.com/OneKiwiPublic/linux-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
 SRCREV:class-devupstream = "d33b43a4dcc4ae3cd178793c139756af77e42bde"
+
 #FIXME force the PV to avoid build issue:
 #  do_package: ExpansionError('SRCPV', '${@bb.fetch2.get_srcrev(d)}', FetchError('SRCREV was used yet no valid SCM was found in SRC_URI', None))
 PV:class-devupstream = "${LINUX_VERSION}${LINUX_SUBVERSION}-${LINUX_TARGET}.${SRCPV}"
@@ -71,7 +76,8 @@ PV:class-devupstream = "${LINUX_VERSION}${LINUX_SUBVERSION}-${LINUX_TARGET}.${SR
 # ---------------------------------
 STM32MP_SOURCE_SELECTION ?= "tarball"
 
-DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'github', '-1', '1', d)}"
+#DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'github', '-1', '1', d)}"
+DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'tarball', '-1', '1', d)}"
 
 # ---------------------------------
 # Configure archiver use

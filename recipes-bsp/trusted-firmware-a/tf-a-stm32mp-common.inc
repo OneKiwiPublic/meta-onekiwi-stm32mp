@@ -21,6 +21,7 @@ TF_A_RELEASE = "r1"
 PV = "${TF_A_VERSION}${TF_A_SUBVERSION}-${TF_A_TARGET}-${TF_A_RELEASE}"
 
 ARCHIVER_ST_BRANCH = "${TF_A_VERSION}-${TF_A_TARGET}"
+ARCHIVER_KIWI_BRANCH = "onekiwi-${ARCHIVER_ST_BRANCH}-${TF_A_RELEASE}"
 ARCHIVER_ST_REVISION = "${TF_A_VERSION}-${TF_A_TARGET}-${TF_A_RELEASE}"
 ARCHIVER_COMMUNITY_BRANCH = "lts-${TF_A_VERSION}"
 ARCHIVER_COMMUNITY_REVISION = "lts-${TF_A_VERSION}${TF_A_SUBVERSION}"
@@ -32,7 +33,10 @@ S = "${WORKDIR}/git"
 # ---------------------------------
 BBCLASSEXTEND = "devupstream:target"
 
-SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/arm-trusted-firmware.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+#SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/arm-trusted-firmware.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+#SRCREV:class-devupstream = "230b4d8447a1b07bb92035e19ccec8c633103a08"
+
+SRC_URI:class-devupstream = "git://github.com/OneKiwiPublic/atf-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
 SRCREV:class-devupstream = "230b4d8447a1b07bb92035e19ccec8c633103a08"
 
 # ---------------------------------
@@ -40,4 +44,5 @@ SRCREV:class-devupstream = "230b4d8447a1b07bb92035e19ccec8c633103a08"
 # ---------------------------------
 STM32MP_SOURCE_SELECTION ?= "tarball"
 
-DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'github', '-1', '1', d)}"
+#DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'github', '-1', '1', d)}"
+DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'tarball', '-1', '1', d)}"

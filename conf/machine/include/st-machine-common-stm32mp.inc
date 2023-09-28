@@ -237,7 +237,8 @@ ST_MAIN_COMPONENTS:stm32mp1common = "tf-a-stm32mp, optee-os-stm32mp, u-boot-stm3
 # Proposed value for rootfs is:
 #   With fw-update   : 736MiB
 #   Without fw-update: 744MiB
-STM32MP_ROOTFS_MAXSIZE_NAND ?= "${@bb.utils.contains('ENABLE_FLASHLAYOUT_CONFIG_FWUP', '1', '753664', '762336', d)}"
+#STM32MP_ROOTFS_MAXSIZE_NAND ?= "${@bb.utils.contains('ENABLE_FLASHLAYOUT_CONFIG_FWUP', '1', '1048576', '1048576', d)}"
+STM32MP_ROOTFS_MAXSIZE_NAND ?= "1048576"
 
 # Default ROOTFS max size for image being built to this value
 IMAGE_ROOTFS_MAXSIZE ?= "${STM32MP_ROOTFS_MAXSIZE_NAND}"
