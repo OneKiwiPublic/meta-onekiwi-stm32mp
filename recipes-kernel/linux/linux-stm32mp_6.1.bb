@@ -65,7 +65,7 @@ BBCLASSEXTEND = "devupstream:target"
 #SRCREV:class-devupstream = "d33b43a4dcc4ae3cd178793c139756af77e42bde"
 
 SRC_URI_class-devupstream = "git://github.com/OneKiwiPublic/linux-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
-SRCREV:class-devupstream = "d33b43a4dcc4ae3cd178793c139756af77e42bde"
+SRCREV:class-devupstream = "72d6e942b441a066fd629186d44ca4497afe8e72"
 
 #FIXME force the PV to avoid build issue:
 #  do_package: ExpansionError('SRCPV', '${@bb.fetch2.get_srcrev(d)}', FetchError('SRCREV was used yet no valid SCM was found in SRC_URI', None))
