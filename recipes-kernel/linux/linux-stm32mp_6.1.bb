@@ -64,7 +64,7 @@ BBCLASSEXTEND = "devupstream:target"
 #SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/linux.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
 #SRCREV:class-devupstream = "d33b43a4dcc4ae3cd178793c139756af77e42bde"
 
-SRC_URI_class-devupstream = "git://github.com/OneKiwiPublic/linux-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
+SRC_URI:class-devupstream = "git://github.com/OneKiwiPublic/linux-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
 SRCREV:class-devupstream = "72d6e942b441a066fd629186d44ca4497afe8e72"
 
 #FIXME force the PV to avoid build issue:
