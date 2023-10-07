@@ -59,7 +59,7 @@ BBCLASSEXTEND = "devupstream:target"
 #SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/u-boot.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
 #SRCREV:class-devupstream = "aa6822adfbe7b0b89d646e987505a740511878e2"
 
-SRC_URI_class-devupstream = "git://github.com/OneKiwiPublic/uboot-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
+SRC_URI:class-devupstream = "git://github.com/OneKiwiPublic/uboot-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
 SRCREV:class-devupstream = "1dd5724d0005e324509f90ce53762987b0711156"
 
 # ---------------------------------
