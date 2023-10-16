@@ -53,7 +53,7 @@ BBCLASSEXTEND = "devupstream:target"
 #SRCREV:class-devupstream = "6b371887f9d6f327975a3b9e55f494ecb1ba71de"
 
 SRC_URI:class-devupstream = "git://github.com/OneKiwiPublic/optee_os-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
-SRCREV:class-devupstream = "b9140cad723477721408e0cbef27804292d6f835"
+SRCREV:class-devupstream = "6c417da537e7337418fb1b4bb1646948a5d2e4f7"
 
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github
