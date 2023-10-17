@@ -53,7 +53,7 @@ BBCLASSEXTEND = "devupstream:target"
 
 SRC_URI_class-devupstream = "git://github.com/OneKiwiPublic/atf-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
 #SRCREV_class-devupstream = "a47302b7b05a9c1e27f62b08fe8f66ca422ef174"
-SRCREV_class-devupstream = "d1026c406077d969eb5227b5c15678c4fec90743"
+SRCREV_class-devupstream = "e2cc0c2e970a081e225189fd4879dbdcadafe39f"
 
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github
