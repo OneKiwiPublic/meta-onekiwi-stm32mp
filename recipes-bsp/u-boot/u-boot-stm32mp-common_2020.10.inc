@@ -57,7 +57,7 @@ BBCLASSEXTEND = "devupstream:target"
 
 SRC_URI_class-devupstream = "git://github.com/OneKiwiPublic/uboot-stm32mp.git;protocol=https;branch=${ARCHIVER_KIWI_BRANCH}"
 #SRCREV_class-devupstream = "b1233459c34eb14c5070f605655e72e74be5ea5c"
-SRCREV_class-devupstream = "125882568d5b275c6bdaca2dc0eec75f9ba26bc9"
+SRCREV_class-devupstream = "2e83f42b2045514eb314c9e5aa3b09db4c813ce7"
 
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github
